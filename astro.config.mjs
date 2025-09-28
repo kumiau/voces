@@ -5,5 +5,6 @@ export default defineConfig({
     '@': './src',
     '@components': './src/components',
     '@layouts': './src/layouts',
+    '@styles': './src/styles',
   },
 });

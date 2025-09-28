@@ -1,5 +1,12 @@
 ---
-const { title = 'Voces de Sierra Morena', description = 'Memoria oral familiar', cover } = Astro.props;
+import Nav from '@/components/Nav.astro';
+import '@/styles/theme.css'; // <— importa tu tema global
+
+const {
+  title = 'Voces de Sierra Morena',
+  description = 'Memoria oral familiar',
+  cover
+} = Astro.props;
 ---
 <html lang="es">
   <head>
@@ -7,29 +14,20 @@ const { title = 'Voces de Sierra Morena', description = 'Memoria oral familiar',
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <style>
-      :root { --mx: 22px; --w: 820px; --fg: #111; --muted:#666; --bg:#fff; }
-      html,body{margin:0;padding:0;color:var(--fg);background:var(--bg);font:16px/1.6 system-ui, sans-serif;}
-      .container{max-width:var(--w);margin:0 auto;padding:0 var(--mx) 4rem;}
-      header{padding:1rem 0;border-bottom:1px solid #eee;margin-bottom:2rem;}
-      h1,h2,h3{line-height:1.2}
-      .muted{color:var(--muted)}
-      article img{max-width:100%;height:auto;border-radius:12px}
-      a{color:inherit}
-      a:hover{opacity:.8}
-      footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #eee;font-size:.9rem;color:var(--muted)}
-    </style>
   </head>
   <body>
     <div class="container">
-      <header>
-        <slot name="nav" />
+      <header class="site">
+        <Nav />
       </header>
-      {cover && <img src={cover} alt="" />}
+
+      {cover && <img src={cover} alt="" class="hero" />}
+
       <main>
         <slot />
       </main>
-      <footer>
+
+      <footer class="site">
         Proyecto familiar • Voces de Sierra Morena — {new Date().getFullYear()}
       </footer>
     </div>

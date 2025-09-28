@@ -1,23 +1,22 @@
 ---
 import Base from '@/layouts/Base.astro';
-import Nav from '@/components/Nav.astro';
 ---
 <Base title="Voces de Sierra Morena — Inicio" description="Memoria oral familiar">
-  <Fragment slot="nav"><Nav /></Fragment>
+  <section class="stack">
+    <h1>Voces de Sierra Morena</h1>
+    <p class="muted">Una iniciativa familiar para preservar la memoria oral.</p>
 
-  <h1>Voces de Sierra Morena</h1>
-  <p class="muted">Una iniciativa familiar para preservar la memoria oral.</p>
-
-  <article>
-    <p>
-      Cada diciembre la familia se reúne en Sierra Morena. Este proyecto busca
-      grabar y conservar las historias de nuestros tíos y tías — recuerdos,
-      anécdotas, visiones del mundo y consejos— inspirados por iniciativas como
-      StoryCorps, para crear un archivo íntimo y duradero para futuras generaciones.
-    </p>
-    <p>
-      Explora la <a href="/sobre">sección sobre el proyecto</a> para conocer
-      objetivos y fases, o visita el <a href="/blog">blog</a> para ver avances.
-    </p>
-  </article>
+    <div class="card">
+      <p>
+        Cada diciembre la familia se reúne en Sierra Morena. Este proyecto busca
+        grabar y conservar las historias de nuestros tíos y tías — recuerdos,
+        anécdotas, visiones del mundo y consejos— para crear un archivo íntimo
+        y duradero para futuras generaciones.
+      </p>
+      <div class="cluster" style="margin-top:.5rem">
+        <a class="button" href="/about">Conocer el proyecto</a>
+        <a class="button button--ghost" href="/blog">Ver avances</a>
+      </div>
+    </div>
+  </section>
 </Base>

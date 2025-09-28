@@ -1,0 +1,355 @@
+/* ==========================
+   Voces de Sierra Morena — Tema
+   ========================== */
+
+:root {
+  /* Colores base (extraídos del logo) */
+  --bg: #FAF5E9;
+  /* crema */
+  --bg-2: #F6F0E4;
+  /* crema sutil para bloques */
+  --fg: #1B140F;
+  /* texto principal (muy oscuro cálido) */
+  --muted: #6E625B;
+  /* texto secundario */
+  --line: #E8DFD2;
+  /* líneas divisorias */
+
+  /* Marca y acentos */
+  --brand: #9C5529;
+  /* café-ocre principal */
+  --brand-2: #D09B4E;
+  /* dorado/ámbar */
+  --coffee-700: #5E2E02;
+  /* café profundo para hover/actives */
+  --olive-700: #6F6430;
+  /* oliva apagado para detalles */
+
+  /* Superficies y efectos */
+  --card: #FFFFFFF2;
+  --ring: #E1D7C7;
+  --shadow: 0 10px 20px rgba(25, 15, 5, .04),
+    0 2px 6px rgba(25, 15, 5, .06);
+
+  /* Tipografía y ritmo */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: "Georgia", "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --maxw: 820px;
+  --gutter: 22px;
+  --radius: 16px;
+
+  /* Escala */
+  --fs-1: clamp(1.8rem, 2.2vw + 1.2rem, 2.6rem);
+  --fs-2: clamp(1.35rem, 1.2vw + .9rem, 1.7rem);
+  --fs-3: 1.125rem;
+  --fs-body: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --trans: 180ms cubic-bezier(.2, .7, .2, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --trans: 0ms;
+  }
+}
+
+/* Reseteo suave + base */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 var(--font-sans);
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color var(--trans), opacity var(--trans);
+}
+
+a:hover {
+  color: var(--coffee-700);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Contenedor y layout */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 4rem;
+}
+
+header.site {
+  padding: .75rem 0 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2rem;
+}
+
+/* ==============
+   NAV
+   ============== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav__brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.nav__brand-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: radial-gradient(60% 60% at 30% 30%, var(--brand-2), var(--brand));
+  box-shadow: inset 0 0 0 1px #ffffff40, 0 1px 2px #0000000f;
+}
+
+.nav__sep {
+  opacity: .35;
+}
+
+.nav__links {
+  display: flex;
+  gap: .9rem;
+  list-style: none;
+  margin: 0;
+}
+
+.nav__links a {
+  color: var(--fg);
+  padding: .35rem .6rem;
+  border-radius: 10px;
+}
+
+.nav__links a[aria-current="page"],
+.nav__links a:hover {
+  background: var(--bg-2);
+}
+
+/* ==============
+   TIPOGRAFÍA
+   ============== */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 1.2rem 0 .6rem;
+}
+
+h1 {
+  font-size: var(--fs-1);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--fs-2);
+}
+
+h3 {
+  font-size: var(--fs-3);
+}
+
+p {
+  margin: .8rem 0;
+  font-size: var(--fs-body);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ==============
+   COMPONENTES
+   ============== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem .9rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--brand) 30%, white);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 15%, white), var(--brand));
+  color: white;
+  font-weight: 600;
+  letter-spacing: .2px;
+  box-shadow: 0 6px 14px rgba(156, 85, 41, .18), 0 2px 6px rgba(0, 0, 0, .06);
+  transition: transform var(--trans), box-shadow var(--trans), background var(--trans);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--coffee-700) 15%, white), var(--coffee-700));
+  box-shadow: 0 10px 20px rgba(94, 46, 2, .20), 0 3px 8px rgba(0, 0, 0, .08);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--brand);
+  border-color: var(--ring);
+}
+
+.badge {
+  display: inline-block;
+  padding: .2rem .5rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--ring);
+  color: var(--olive-700);
+  font-weight: 600;
+}
+
+/* ==============
+   BLOG LIST
+   ============== */
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-list__item {
+  padding: .9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-list__item:last-child {
+  border-bottom: 0;
+}
+
+.blog-list__title {
+  display: inline-block;
+  font-weight: 800;
+}
+
+.blog-list__meta {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: .15rem;
+}
+
+/* ==============
+   PROSA (contenido de los posts)
+   ============== */
+.prose {
+  font-size: var(--fs-body);
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre,
+.prose table {
+  margin: 1rem 0;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.2rem;
+}
+
+.prose blockquote {
+  padding: .8rem 1rem;
+  border-left: 4px solid var(--brand-2);
+  background: var(--bg-2);
+  border-radius: 12px;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: .95em;
+  background: #fff3;
+  padding: .15rem .35rem;
+  border-radius: .4rem;
+  border: 1px solid var(--ring);
+  background: #fff;
+  color: #4A3625;
+}
+
+.prose pre {
+  background: #1c120b;
+  color: #F7EBDD;
+  padding: 1rem;
+  border-radius: 14px;
+  overflow: auto;
+  border: 1px solid #2a1a10;
+}
+
+.prose pre code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0;
+}
+
+/* Títulos dentro de la prosa */
+.prose h2 {
+  margin-top: 2rem;
+}
+
+.prose h3 {
+  margin-top: 1.5rem;
+}
+
+/* ==============
+   FOOTER
+   ============== */
+footer.site {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* ==============
+   UTILIDADES
+   ============== */
+.stack {
+  display: grid;
+  gap: .8rem;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  align-items: center;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
