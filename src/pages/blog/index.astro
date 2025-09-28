@@ -1,0 +1,22 @@
+---
+import Base from '@/layouts/Base.astro';
+import Nav from '@/components/Nav.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const ordered = posts.sort((a,b) => new Date(b.data.date) - new Date(a.data.date));
+---
+<Base title="Blog — Voces de Sierra Morena" description="Avances, actas y guías">
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <h1>Blog</h1>
+  <ul>
+    {ordered.map(({ slug, data }) => (
+      <li style="margin: .75rem 0;">
+        <a href={`/blog/${slug}/`}><strong>{data.title}</strong></a>
+        <div class="muted">{new Date(data.date).toLocaleDateString('es-CO')}</div>
+        {data.summary && <div>{data.summary}</div>}
+      </li>
+    ))}
+  </ul>
+</Base>
