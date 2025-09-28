@@ -1,22 +1,77 @@
 ---
-import Base from '@/layouts/Base.astro';
+import Base from "@/layouts/Base.astro";
 ---
-<Base title="Voces de Sierra Morena — Inicio" description="Memoria oral familiar">
-  <section class="stack">
-    <h1>Voces de Sierra Morena</h1>
-    <p class="muted">Una iniciativa familiar para preservar la memoria oral.</p>
 
-    <div class="card">
-      <p>
-        Cada diciembre la familia se reúne en Sierra Morena. Este proyecto busca
-        grabar y conservar las historias de nuestros tíos y tías — recuerdos,
-        anécdotas, visiones del mundo y consejos— para crear un archivo íntimo
-        y duradero para futuras generaciones.
-      </p>
-      <div class="cluster" style="margin-top:.5rem">
-        <a class="button" href="/about">Conocer el proyecto</a>
-        <a class="button button--ghost" href="/blog">Ver avances</a>
+<Base
+  title="Voces de Sierra Morena — Inicio"
+  description="Memoria oral familiar"
+>
+  <section
+    class="hero"
+    aria-label="Imagen de portada de la finca Sierra Morena"
+  >
+    <div class="hero-media">
+      <img
+        src="https://placehold.co/1600x900?text=Sierra+Morena"
+        alt="Paisaje que representa la finca Sierra Morena"
+        width="1600"
+        height="900"
+        loading="eager"
+      />
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Memoria familiar</div>
+        <h1 class="hero-title">Voces de Sierra Morena</h1>
+        <p class="hero-subtitle">
+          Una iniciativa familiar para grabar y conservar las historias de
+          nuestros tíos y tías—sus recuerdos, anécdotas y consejos—y
+          compartirlas con las generaciones futuras.
+        </p>
       </div>
     </div>
+  </section>
+
+  <section class="section" aria-labelledby="que-es">
+      <h2 id="que-es" class="visually-hidden">¿De qué se trata?</h2>
+      <p class="lead">
+        Cada diciembre la familia Restrepo Arenas se reúne en Sierra Morena.
+        Este año quisimos dar un paso más: registrar en voz viva las memorias de
+        la generación de nuestros tíos y tías. Este sitio recoge ese esfuerzo
+        colectivo, sin fines comerciales.
+      </p>
+
+      <div class="card-row" role="list">
+        <article class="card" role="listitem">
+          <h3>¿Qué hacemos?</h3>
+          <p>
+            Grabamos conversaciones familiares para preservar la memoria viva de
+            nuestros tíos y tías.
+          </p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>¿Cómo lo hacemos?</h3>
+          <p>
+            Preparamos un espacio cálido, usamos buen audio y seguimos guías de
+            entrevista cuidadas.
+          </p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>¿Para qué lo hacemos?</h3>
+          <p>
+            Para que hijos, sobrinos, nietos y bisnietos puedan escuchar estas
+            voces y sentir más cerca a quienes vinieron antes.
+          </p>
+        </article>
+      </div>
+
+      <div class="kicker" aria-label="Invitación a participar">
+        <p>
+          Este proyecto no es solo grabar voces. Es mirarnos a los ojos,
+          preguntar con cariño y escuchar con el corazón. Es construir juntos un
+          legado familiar.
+        </p>
+      </div>
   </section>
 </Base>
