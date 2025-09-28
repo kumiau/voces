@@ -1,43 +1,77 @@
-# Astro Starter Kit: Minimal
+# Voces de Sierra Morena
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio web del proyecto familiar **Voces de Sierra Morena**, creado con [Astro](https://astro.build) y [UnoCSS](https://unocss.dev). El objetivo del sitio es documentar y compartir la memoria oral de nuestros tíos y tías a través de entrevistas y relatos.
+
+---
+
+## 🚀 Tecnologías
+- [Astro](https://astro.build): framework de sitios estáticos
+- [UnoCSS](https://unocss.dev): utilidades atómicas de CSS
+- Markdown (`src/content/blog`) para las entradas del blog
+- Despliegue en **GitHub Pages**
+
+---
+
+## 📂 Estructura del proyecto
+```
+└─ src/
+   ├─ components/     # Componentes de UI (Nav, etc.)
+   ├─ layouts/        # Layouts base
+   ├─ pages/          # Páginas (Home, Sobre, Blog)
+   ├─ styles/         # Estilos globales y tema
+   └─ content/
+      └─ blog/        # Entradas en Markdown
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🔧 Desarrollo local
+1. Clonar el repo y entrar en la carpeta:
+   ```bash
+   git clone https://github.com/usuario/vocessm.git
+   cd vocessm
+   ```
 
-Inside of your Astro project, you'll see the following folders and files:
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+3. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+Abrir en [http://localhost:4321](http://localhost:4321)
+
+---
+
+## 📦 Build
+Generar el sitio estático:
+```bash
+npm run build
 ```
+Los archivos finales se generan en `dist/`.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🌐 Deploy
+Este sitio está configurado para desplegarse en **GitHub Pages** mediante GitHub Actions:
+- El archivo de workflow se encuentra en `.github/workflows/deploy.yml`.
+- Se despliega automáticamente al hacer *push* en la rama `main`.
+- En caso de usar **Project Pages**, se debe configurar `base` en `astro.config.mjs` con el nombre del repositorio.
 
-Any static assets, like images, can be placed in the `public/` directory.
+URL de producción: `https://usuario.github.io/vocessm`
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## ✨ Funcionalidades
+- **Home**: introducción al proyecto.
+- **Sobre el proyecto**: objetivos, motivación y fases.
+- **Blog**: bitácora de actas, avances y guías.
+- Diseño inspirado en el logo del proyecto, con paleta cálida y tipografía sencilla.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📜 Licencia
+Proyecto con fines familiares y culturales. Código abierto bajo licencia MIT.
